@@ -13,17 +13,17 @@
 ~~Set up folder structure~~
 
 ###Step 2: Start Coding (Create & Read)
-Create your database using Pam's method.
+~~Create your database using Pam's method.~~
 
 ~~Set up ruby files~~
 
-Create Login form
+~~Create Login form using Sean's ruby gem.~~
+
+Rake database
 
 A user can login.
 
 A user can sign up.
-
-rake database
 
 A user can create a task inside of a list.
 
