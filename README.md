@@ -1,18 +1,18 @@
-### 2Do App
+# 2Do App: Project Breakdown
 
-## Project Breakdown
-
-#Step 1:
+####Step 1:
 
 Set up git/github repo
 
-#Step 2:
+###Step 2:
 
 Create ERD's (User's, List's, Item's)
 
-#Step 3:
+###Step 3:
 
 Create User Stories on Pivotal Tracker
 
-#Step 4:
+###Step 4:
+
+soon...
 
