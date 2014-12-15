@@ -12,7 +12,7 @@
 
 Set up folder structure
 
-##Step 2: Start Coding (Create)
+##Step 2: Start Coding (Create & Read)
 Create your database using Pam's method.
 
 A user can login.
@@ -35,5 +35,8 @@ Find out how to add good looking buttons
 
 Give some flair to your forms.
 
-##Step 5: Testing/Refactoring/Addon's
+##Step 5: Testing/Refactoring
 
+#December 17th
+
+##Step 6: Final changes and upload to Heroku
