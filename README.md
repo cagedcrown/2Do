@@ -3,8 +3,11 @@
 ###Step 1: Basic Setup
 
 ~~Set up git/github repo~~
+
 ~~Create ERD's (User, Task, List)~~
+
 ~~Create User Stories on Pivotal Tracker~~
+
 Set up basic folder structure
 
 ###Step 2: Start Coding
