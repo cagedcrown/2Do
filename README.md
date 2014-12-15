@@ -1,18 +1,21 @@
 # 2Do App: Project Breakdown
 
-###Step 1:
+###Step 1: Basic Setup
 
 ~~Set up git/github repo~~
-
-###Step 2:
-
 ~~Create ERD's (User, Task, List)~~
+~~Create User Stories on Pivotal Tracker~~
+Set up basic folder structure
+
+###Step 2: Start Coding
+Create your database
+Create Login/Signup email and password structure
+
 
 ###Step 3:
 
-~~Create User Stories on Pivotal Tracker~~
-
 ###Step 4:
 
-soon...
+###Step 5:
+
 
