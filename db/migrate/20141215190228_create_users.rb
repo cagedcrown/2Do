@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
 		  t.string :email
 		  t.string :hashed_password
 		  t.string :salt
-		  t.string :username, null: false
 		  t.timestamps
 		end	
 

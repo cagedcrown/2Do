@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20141215190252) do
     t.string   "email"
     t.string   "hashed_password"
     t.string   "salt"
-    t.string   "username",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
