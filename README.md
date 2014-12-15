@@ -13,7 +13,7 @@ Set up folder structure
 ##Step 2: Start Coding
 Create your database using Pam's method.
 
-###Create Login/Signup email and password structure.
+#####Create Login/Signup email and password structure.
 
 A user can login.
 
