@@ -1,0 +1,4 @@
+development: 
+  adapter: postgresql
+  database: todo_dev
+  host: localhost
