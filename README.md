@@ -1,6 +1,6 @@
 #2Do App: Project Breakdown
 
-#December 15th
+#Monday, December 15th
 
 ##Step 1: Basic Setup
 
@@ -23,7 +23,7 @@ A user can sign up.
 
 A user can create a task inside a list.
 
-#December 16th
+#Tuesday, December 16th
 
 ##Step 3: MVP (Update & Delete)
 
@@ -37,6 +37,6 @@ Give some flair to your forms.
 
 ##Step 5: Testing/Refactoring
 
-#December 17th
+# Wednesday, December 17th
 
 ##Step 6: Final changes and upload to Heroku
