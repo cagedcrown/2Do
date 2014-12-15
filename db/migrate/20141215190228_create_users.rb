@@ -1,11 +1,16 @@
 class CreateUsers < ActiveRecord::Migration
 	def change
 		create_table :users do |t|
-			t.string :username, null: false
-			t.string :password, null: false
-			t.text :description, default: ""
+		  # We need these attributes for SimpleAuthentication to work
+		  t.string :email
+		  t.string :hashed_password
+		  t.string :salt
+		  t.string :username, null: false
+		  t.string :password, null: false
+		  t.text :description, default: ""
+		  t.timestamps
+		end	
 
-			t.timestamps
-		end
+		add_index :users, :email, :unique => true
 	end
 end

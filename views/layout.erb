@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>2Do | To-Do List</title>
-    <link type="text/css" rel="stylesheet" href="/public/styles.css">
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<head>
+  <title>2Do | To-Do List</title>
+  <link type="text/css" rel="stylesheet" href="/public/styles.css">
+</head>
+	<nav>
+		<h1>Testing</h1>
+	</nav>
+<body>
+  <%#= We use flash[:notice] and flash[:error] to display one-time messages to the user. Something like "Successfully logged in!" or "Could not log in :(" would go in these %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+
+  <% if flash[:error] %>
+    <%= flash[:error] %>
+  <% end %>
+
+  <%= yield %>
+</body>
 </html>

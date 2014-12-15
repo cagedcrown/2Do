@@ -2,7 +2,7 @@
 
 ##Monday, December 15th
 
-~~###Step 1: Basic Setup~~
+###~~Step 1: Basic Setup~~
 
 ~~Set up git/github repo.~~
 
@@ -17,14 +17,17 @@ Create your database using Pam's method.
 
 ~~Set up ruby files~~
 
-A user can create a task inside of a list.
+Create Login form
 
 A user can login.
 
 A user can sign up.
 
-~~A User can create a list? (Not so sure)~~
+rake database
 
+A user can create a task inside of a list.
+
+~~A User can create a list? (Not so sure)~~
 
 ##Tuesday, December 16th
 
