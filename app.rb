@@ -32,6 +32,10 @@ get '/' do
   erb :index
 end
 
+get '/lists' do
+	@lists = List.all
+	erb :lists
+end
 # #setting up the index route
 # get '/' do
 #   # @users = User.all

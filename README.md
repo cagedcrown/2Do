@@ -25,29 +25,27 @@
 
 ~~A user can sign up.~~
 
-A User can create a list
+A user can create a list.
 
 A user can create a task inside of a list.
 
-A user can view lists
+A user can view lists.
 
-A user can view all tasks in a list
+A user can view all tasks in a list.
 
-A user can delete a list
+A user can delete a list.
 
-A user can delete a task in a list
+A user can delete a task in a list.
 
 ##Tuesday, December 16th
 
 ###Step 3: Refactoring and Make it look beautiful with CSS
 
-Find out how to add good looking buttons
+Add some sexy css buttons.
 
 Give some flair to your forms.
 
-###Step 4: 
-
-
+###Step 4: Look for areas that may need improvement.
 
 ###Step 5: Testing/Refactoring
 
