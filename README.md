@@ -1,5 +1,7 @@
 #2Do App: Project Breakdown
 
+#December 15th
+
 ##Step 1: Basic Setup
 
 ~~Set up git/github repo.~~
@@ -10,24 +12,28 @@
 
 Set up folder structure
 
-##Step 2: Start Coding
+##Step 2: Start Coding (Create)
 Create your database using Pam's method.
-
-#####Create Login/Signup email and password structure.
 
 A user can login.
 
 A user can sign up.
 
-~~A User can create a list?~~
+~~A User can create a list? (Not so sure)~~
 
-A User can create a task in the list.
+A user can create a task inside a list.
 
+#December 16th
 
-###Step 3:
+##Step 3: MVP (Update & Delete)
 
-###Step 4:
+Have the rest of basic CRUD functionality
 
-###Step 5:
+##Step 4: Make it look beautiful with CSS
 
+Find out how to add good looking buttons
+
+Give some flair to your forms.
+
+##Step 5: Testing/Refactoring/Addon's
 
