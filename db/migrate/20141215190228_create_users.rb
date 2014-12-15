@@ -6,8 +6,6 @@ class CreateUsers < ActiveRecord::Migration
 		  t.string :hashed_password
 		  t.string :salt
 		  t.string :username, null: false
-		  t.string :password, null: false
-		  t.text :description, default: ""
 		  t.timestamps
 		end	
 

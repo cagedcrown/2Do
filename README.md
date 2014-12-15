@@ -19,7 +19,7 @@
 
 ~~Create Login form using Sean's ruby gem.~~
 
-Rake database
+~~Rake database~~
 
 A user can login.
 
