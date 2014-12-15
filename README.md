@@ -21,9 +21,9 @@
 
 ~~Rake database~~
 
-A user can login.
+~~A user can login.~~
 
-A user can sign up.
+~~A user can sign up.~~
 
 A user can create a task inside of a list.
 
