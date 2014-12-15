@@ -2,7 +2,7 @@
 
 ####Step 1:
 
-Set up git/github repo
+~~Set up git/github repo~~
 
 ###Step 2:
 
