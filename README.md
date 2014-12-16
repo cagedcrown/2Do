@@ -12,7 +12,7 @@
 
 ~~Set up folder structure~~
 
-###~~Step 2: Start Coding (MVP & CRUD)~~
+###~~Step 2: Start Coding~~
 ~~Create your database using Pam's method.~~
 
 ~~Set up ruby files~~
@@ -29,15 +29,21 @@
 
 ##Tuesday, December 16th
 
-A user can create a task inside of a list.
+Step 3: Work on MVP & Create, Read, Update, and Delete
 
 ~~A user can view lists.~~
 
-A user can view all tasks in a list.
+~~A user can view all tasks in a list.~~
+
+A user can create a task inside of a list.
 
 A user can delete a list.
 
 A user can delete a task in a list.
+
+A user can update a list.
+
+A user can update a task in a list.
 
 ###Step 3: Refactoring and Make it look beautiful with CSS
 
