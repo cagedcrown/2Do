@@ -44,24 +44,21 @@ get '/new_task_form' do
 end
 
 post '/new_task_form' do
-	@current_user_id = current_user.id
 	@list_title = params[:title]
 	@task_body = params[:body]
-	# Task.create(title: @task_title , body: @task_body, list_id: , user_id: @current_user_id)
-	redirect '/:list_id/task'
+	@current_user_id = current_user.id
+	@list_id = list.id
+	Task.create(title: @task_title , body: @task_body, list_id: @list_id, user_id: @current_user_id)
 end
 
 get '/:list_id/tasks' do
-	erb :new_task_form
+	# @tasks = Task.all
+	@tasks = Task.where(list_id: params[:list_id])
+	erb :tasks
 end
 
 post '/:list_id/tasks' do
-
-end
-
-get '/:list_id/tasks' do
-	@task = Task.find(where task_id: params[:list_id])
-	erb :tasks
+	erb :new_task_form
 end
 
 get '/current_user' do
@@ -74,7 +71,6 @@ end
 # get '/:list_title/tasks' do
 # 	erb :
 # end
-
 
 # get '/new_thing/:thing' do
 # 	@whatever_we_want = params[:thing]
