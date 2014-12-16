@@ -27,6 +27,8 @@
 
 A user can create a list.
 
+##Tuesday, December 16th
+
 A user can create a task inside of a list.
 
 A user can view lists.
@@ -36,8 +38,6 @@ A user can view all tasks in a list.
 A user can delete a list.
 
 A user can delete a task in a list.
-
-##Tuesday, December 16th
 
 ###Step 3: Refactoring and Make it look beautiful with CSS
 

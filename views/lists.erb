@@ -1,1 +1,9 @@
-<%= @lists %>
+<!-- <%= @lists %> -->
+
+<ul>
+	<% @lists.each do |list| %>
+	<li><%= list.title %> </li>
+	<% end %>
+</ul>
+
+<%= erb :new_list_form %>

@@ -36,6 +36,43 @@ get '/lists' do
 	@lists = List.all
 	erb :lists
 end
+
+
+get '/new_list' do
+	erb :new_list_form
+end
+
+
+post '/new_list' do
+	
+end
+
+# get '/:list_title/tasks' do
+# 	erb :
+# end
+
+
+get '/new_thing/:thing' do
+
+	@whatever_we_want = params[:thing]
+	erb :someview
+end
+
+post '/new_list_form' do
+	@list_title = params[:title]
+	@list_body = params[:body]
+	List.create(title: @list_title , body: @list_body)
+	erb :lists
+	# redirect '/lists'
+end
+
+
+
+
+
+
+
+
 # #setting up the index route
 # get '/' do
 #   # @users = User.all
