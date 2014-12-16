@@ -44,15 +44,16 @@ get '/new_task_form' do
 end
 
 post '/new_task_form' do
-	@list_title = params[:title]
-	@task_body = params[:body]
+	puts params.inspect
 	@current_user_id = current_user.id
-	@list_id = list.id
-	Task.create(title: @task_title , body: @task_body, list_id: @list_id, user_id: @current_user_id)
+	@task_title = params[:title]
+	@task_body = params[:description]
+	@list_id = params[:list_id]
+	Task.create(title: @task_title, description: @task_body, list_id: @list_id, user_id: @current_user_id)
 end
 
 get '/:list_id/tasks' do
-	# @tasks = Task.all
+    @list_id = params[:list_id]
 	@tasks = Task.where(list_id: params[:list_id])
 	erb :tasks
 end

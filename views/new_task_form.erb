@@ -1,7 +1,9 @@
 <form action="/new_task_form" method="post">
 
-<input type="text" placeholder="Enter Task Title" name="task_title">
+<input type="text" placeholder="Enter Task Title" name="title">
 
-<input type="text" placeholder="Enter Task Description" name="task_description">
+<input type="text" placeholder="Enter Task Description" name="description">
+
+<input type="hidden" name="list_id" value="<%= @list_id %>">
 
 <input type="submit">
