@@ -27,6 +27,10 @@ get '/lists' do
 end
 
 # able to view all lists and create a list on the same page
+get '/new_list' do
+	erb :new_list_form
+end
+
 post '/new_list_form' do
 	@list_title = params[:title]
 	@list_body = params[:body]
@@ -34,25 +38,22 @@ post '/new_list_form' do
 	redirect '/lists'
 end
 
-
-get '/new_list' do
-	erb :new_list_form
-end
-
-get '/new_task' do
-	erb :new_task
-end
-
-post '/new_task' do
-
-end
-
+# able to view tasks within a form
 post '/new_task_form' do
 	Task.create(title: @list_title , body: @list_body)
 end
 
-post '/new_list' do
-	
+get '/:list_id/tasks' do
+	erb :new_task
+end
+
+post '/list_id/tasks' do
+
+end
+
+get ':list_id/tasks' do
+	@task = Task.find(where task_id: params[:list_id])
+	erb :tasks
 end
 
 # get '/:list_title/tasks' do

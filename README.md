@@ -12,7 +12,7 @@
 
 ~~Set up folder structure~~
 
-###Step 2: Start Coding (MVP & CRUD)
+###~~Step 2: Start Coding (MVP & CRUD)~~
 ~~Create your database using Pam's method.~~
 
 ~~Set up ruby files~~

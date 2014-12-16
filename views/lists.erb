@@ -3,6 +3,7 @@
 <h2><%= erb :new_list_form %></h2>
 <ul>
 	<% @lists.each do |list| %>
-	<li><a href="/:list/tasks"><%= list.title %> </li>
+	<li><a href="/:list_id/tasks"><%= list.title %> </li>
 	<% end %>
 </ul>
+
