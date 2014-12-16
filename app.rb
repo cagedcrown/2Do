@@ -39,22 +39,37 @@ post '/new_list_form' do
 end
 
 # able to view tasks within a form
+get '/new_task_form' do
+	erb :new_task_form
+end
+
 post '/new_task_form' do
-	Task.create(title: @list_title , body: @list_body)
+	@current_user_id = current_user.id
+	@list_title = params[:title]
+	@task_body = params[:body]
+	# Task.create(title: @task_title , body: @task_body, list_id: , user_id: @current_user_id)
+	redirect '/:list_id/task'
 end
 
 get '/:list_id/tasks' do
-	erb :new_task
+	erb :new_task_form
 end
 
-post '/list_id/tasks' do
+post '/:list_id/tasks' do
 
 end
 
-get ':list_id/tasks' do
+get '/:list_id/tasks' do
 	@task = Task.find(where task_id: params[:list_id])
 	erb :tasks
 end
+
+get '/current_user' do
+	@current_user_id = current_user.id
+	@current_user_email = current_user.email
+	erb :current_user
+end
+
 
 # get '/:list_title/tasks' do
 # 	erb :

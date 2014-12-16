@@ -1,6 +1,5 @@
 <h3>All tasks</h3>
-<h2><a href="/lists">Back</a>
-<h2><%= erb :new_list_form %></h2>
+<h2><a href="/lists">Back</a><%= erb :new_task_form %></h2>
 <ul>
 	<% @task.each do |task| %>
 	<li><a href=":list_id/tasks"><%= task.title %> </li>
