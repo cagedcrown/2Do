@@ -1,7 +1,8 @@
 body {
 	text-align: center;
-	width: 100%;
+	width: 600px;
 	font-family: "Avenir";
+	margin: auto;
 }
 
 a{
@@ -17,4 +18,9 @@ textarea{
 
 small{
 	font-weight: lighter;
+}
+
+ul {
+	text-decoration: none;
+	list-style: none;
 }

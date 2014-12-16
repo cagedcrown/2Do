@@ -25,13 +25,13 @@
 
 ~~A user can sign up.~~
 
-A user can create a list.
+~~A user can create a list.~~
 
 ##Tuesday, December 16th
 
 A user can create a task inside of a list.
 
-A user can view lists.
+~~A user can view lists.~~
 
 A user can view all tasks in a list.
 
