@@ -39,7 +39,7 @@ post '/new_list_form' do
 end
 
 # able to view tasks within a form
-get '/new_task_form' do
+get '/new_task' do
 	erb :new_task_form
 end
 
@@ -58,16 +58,46 @@ get '/:list_id/tasks' do
 	erb :tasks
 end
 
+get '/:list_id/task_added' do
+	erb :task_added
+end
+
+
 post '/:list_id/tasks' do
 	erb :new_task_form
 end
 
-get '/current_user' do
-	@current_user_id = current_user.id
-	@current_user_email = current_user.email
-	erb :current_user
+# get '/current_user' do
+# 	@current_user_id = current_user.id
+# 	@current_user_email = current_user.email
+# 	erb :current_user
+# end
+
+# delete lists and tasks
+get '/:list_id/delete' do
 end
 
+post '/:list_id/delete' do
+end
+
+get '/:list_id/tasks/:task_id/delete' do
+end
+
+post '/:list_id/tasks/:task_id/delete' do
+end
+
+# edit lists and tasks
+get '/:list_id/edit' do
+end
+
+post '/:list_id/edit' do
+end
+
+get '/:list_id/tasks/:task_id/edit' do
+end
+
+post '/:list_id/tasks/:task_id/edit' do
+end
 
 # get '/:list_title/tasks' do
 # 	erb :
