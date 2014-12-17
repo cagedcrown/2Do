@@ -1,8 +1,7 @@
-<!-- <%= @lists %> -->
 <head>
 	<link type="text/css" rel="stylesheet" href="./public/styles.css">
 </head>
-<h3>All lists</h3>
+<h1>All lists</h1>
 <h2><%= erb :new_list_form %></h2>
 
 <table>
@@ -17,7 +16,7 @@
 		<td><a href="/<%= list.id %>/tasks"><%= list.title %> </td>
 		<td><p><%= list.body %></p></td>
 		<td><a href="/<%= list.id %>/edit"><img width="25px" src="/images/edit.svg" alt="Edit"></a></td>
-		<td><a href="/<%= list.id %>/delete"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
+		<td><a href="/something/<%= list.id %>/delete"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
 	</tr>
 	<% end %>
 </table>

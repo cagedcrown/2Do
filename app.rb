@@ -3,11 +3,14 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'sinatra/simple-authentication'
 require 'rack-flash'
+require 'pry'
 
 require_relative './models/user'
 require_relative './models/list'
 require_relative './models/task'
 require_relative './config/environments'
+
+#binding.pry
 
 Sinatra::SimpleAuthentication.configure do |c|
   c.use_password_confirmation = true
@@ -24,6 +27,16 @@ end
 get '/lists' do
 	@lists = List.all
 	erb :lists
+end
+
+get '/something/:list_id/delete' do
+
+	@delete_list = List.find(params[:list_id])
+	@delete_list.destroy
+	# erb :lists
+	redirect "/"
+	# erb :lists
+	# erb :
 end
 
 # able to view all lists and create a list on the same page
@@ -74,10 +87,10 @@ end
 # end
 
 # delete lists and tasks
-get '/:list_id/delete' do
-end
+
 
 post '/:list_id/delete' do
+	# delete lists which matches the selected id key
 end
 
 get '/:list_id/tasks/:task_id/delete' do
@@ -98,6 +111,25 @@ end
 
 post '/:list_id/tasks/:task_id/edit' do
 end
+
+# 
+# get '/users/:username/deals/:deal_id/delete' do
+# 	@deal = Deal.find(params[:deal_id])
+# 	@deal.destroy
+# 	redirect("/users/#{params[:username]}/deals")
+# end
+
+# get '/users/:username/purchases' do
+# 	@purchases = @current_user.purchases
+# 	erb :purchases
+# end
+
+# get '/users/:username/purchases/:purchase_id/delete' do
+# 	@purchase = Purchase.find(params[:purchase_id])
+# 	@purchase.destroy
+# 	redirect("/users/#{params[:username]}/purchases")
+# end
+
 
 # get '/:list_title/tasks' do
 # 	erb :
