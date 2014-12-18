@@ -1,5 +1,9 @@
-.signup {
+.signup, .nav {
 	color: #0bc8a2;
+}
+
+.nav {
+	display: inline-block;
 }
 
 body {
