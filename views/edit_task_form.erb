@@ -1,3 +1,8 @@
+<h3>Are you sure you want to edit this task?
+
+<blockquote><%= @task.title %></blockquote>
+
+</h3>
 <form action="/task/<%= @task_id %>/edit" method="post">
 
 <input type="text" placeholder="Enter List Title" name="title">

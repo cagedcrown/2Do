@@ -57,6 +57,7 @@ post '/new_task_form' do
 end
 
 get '/:list_id/tasks' do
+	@list_title = List.find(params[:list_id])
     @list_id = params[:list_id]
 	@tasks = Task.where(list_id: params[:list_id])
 	erb :tasks
@@ -73,6 +74,7 @@ get '/:list_id/task_added' do
 end
 
 get '/remove/task/:task_id' do
+	
 	@task_id = params[:task_id]
 	erb :delete_task_form
 end
@@ -107,6 +109,8 @@ get '/task/:task_id/edit' do
 	@task_id = @task.id
 	erb :edit_task_form
 end
+
+# @task_title = task.find(params[:task_id])
 
 post '/task/:task_id/edit' do
 	@update_task = Task.find(params[:task_id])
