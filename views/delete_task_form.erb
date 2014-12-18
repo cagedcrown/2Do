@@ -1,7 +1,5 @@
 <h3>Are you sure you want to delete this task?</h3>
 
-<blockquote>><%= @task.title %></blockquote>
-
 <form method="post" action="/task_removed"> 
 
 	<input type="hidden" name="task_id" value="<%= @task_id %>">
