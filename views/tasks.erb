@@ -12,10 +12,11 @@
 
 	<% @tasks.each do |task| %>	
 	<tr class="icon">
-		<td><a href="/:list_id/tasks"><%= task.title %> </td>
+		<td><%= task.title %> </td>
 		<td><a href="/:list_id/tasks"><%= task.description %> </td>
 		<td><a href="/:list_id/tasks"><img width="25px" src="/images/edit.svg" alt="Edit"></a></td>
-		<td><a href="/:list_id/tasks"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
+		<td><a href="/apple/:list_id/tasks"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
 	</tr>
 	<% end %>
 </table>
+

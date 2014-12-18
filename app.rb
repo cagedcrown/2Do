@@ -30,13 +30,9 @@ get '/lists' do
 end
 
 get '/something/:list_id/delete' do
-
 	@delete_list = List.find(params[:list_id])
 	@delete_list.destroy
-	# erb :lists
 	redirect "/"
-	# erb :lists
-	# erb :
 end
 
 # able to view all lists and create a list on the same page
@@ -50,6 +46,7 @@ post '/new_list_form' do
 	List.create(title: @list_title , body: @list_body)
 	redirect '/lists'
 end
+###
 
 # able to view tasks within a form
 get '/new_task' do
@@ -86,14 +83,14 @@ end
 # 	erb :current_user
 # end
 
+
 # delete lists and tasks
 
 
-post '/:list_id/delete' do
-	# delete lists which matches the selected id key
-end
-
-get '/:list_id/tasks/:task_id/delete' do
+get '/whatever/:task_id' do
+	@delete_task = Task.find(params[:task_id])
+	@delete_task.destroy
+	erb :tasks
 end
 
 post '/:list_id/tasks/:task_id/delete' do
@@ -111,6 +108,18 @@ end
 
 post '/:list_id/tasks/:task_id/edit' do
 end
+
+#####
+
+# class Item < ActiveRecord::Base
+# 	has_many :deals, dependent: :destroy 
+# 	has_many :vendors, :through => :deals
+# 	validates :name, uniqueness: true
+# 	validates :name, presence: true
+
+# end
+
+#####
 
 # 
 # get '/users/:username/deals/:deal_id/delete' do
