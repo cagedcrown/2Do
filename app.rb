@@ -29,12 +29,6 @@ get '/lists' do
 	erb :lists
 end
 
-get '/something/:list_id/delete' do
-	@delete_list = List.find(params[:list_id])
-	@delete_list.destroy
-	redirect "/"
-end
-
 # able to view all lists and create a list on the same page
 get '/new_list' do
 	erb :new_list_form
@@ -46,7 +40,6 @@ post '/new_list_form' do
 	List.create(title: @list_title , body: @list_body)
 	redirect '/lists'
 end
-###
 
 # able to view tasks within a form
 get '/new_task' do
@@ -54,7 +47,7 @@ get '/new_task' do
 end
 
 post '/new_task_form' do
-	puts params.inspect
+	# puts params.inspect
 	@current_user_id = current_user.id
 	@task_title = params[:title]
 	@task_body = params[:description]
@@ -68,14 +61,38 @@ get '/:list_id/tasks' do
 	erb :tasks
 end
 
+get '/something/:list_id/delete' do
+	@delete_list = List.find(params[:list_id])
+	@delete_list.destroy
+	redirect "/"
+end
+
 get '/:list_id/task_added' do
 	erb :task_added
 end
 
+get '/remove/task/:task_id' do
+	erb :delete_task_form
+end
+
+post '/task_removed' do
+	@task_title = params[:title]
+	@task_body = params[:description]
+	@task_id = params[:task_id]
+	@list_id = params[:list_id]
+	Task.destroy(title: @task_title, description: @task_body, task_id: @task_id, list_id: @list_id)
+	redirect '/lists'
+end
 
 post '/:list_id/tasks' do
 	erb :new_task_form
 end
+
+# delete 'remove/task/:id' do
+#   Task.get(params[:id]).destroy
+#   redirect to('/')
+# end
+
 
 # get '/current_user' do
 # 	@current_user_id = current_user.id

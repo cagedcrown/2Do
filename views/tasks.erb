@@ -1,5 +1,5 @@
-<h3>All Tasks</h3>
-<h2><a href="/lists"><img width="25px" src="/images/back.svg" alt="Edit"></a><%= erb :new_task_form %>
+<h1>All Tasks</h1>
+<h2><a href="/lists"><img width="25px" src="/images/back.svg" alt="Edit">Go back to all lists</a><%= erb :new_task_form %>
 </h2>
 
 <table>
@@ -15,8 +15,9 @@
 		<td><%= task.title %> </td>
 		<td><a href="/:list_id/tasks"><%= task.description %> </td>
 		<td><a href="/:list_id/tasks"><img width="25px" src="/images/edit.svg" alt="Edit"></a></td>
-		<td><a href="/apple/:list_id/tasks"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
+		<td><a href="/remove/task/<%= task.id %>"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
 	</tr>
 	<% end %>
 </table>
-
+<!-- 
+/remove/task/:task_id -->

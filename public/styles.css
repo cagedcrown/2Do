@@ -41,6 +41,11 @@ ul {
 	list-style: none;
 }
 
+footer {
+	margin-top: 20em;
+}
+
+
 .icon {
 	width: 40px;
 	height: auto;
