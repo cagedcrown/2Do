@@ -53,6 +53,7 @@ post '/new_task_form' do
 	@task_body = params[:description]
 	@list_id = params[:list_id]
 	Task.create(title: @task_title, description: @task_body, list_id: @list_id, user_id: @current_user_id)
+	redirect '/lists'
 end
 
 get '/:list_id/tasks' do
@@ -72,15 +73,13 @@ get '/:list_id/task_added' do
 end
 
 get '/remove/task/:task_id' do
+	@task_id = params[:task_id]
 	erb :delete_task_form
 end
 
 post '/task_removed' do
-	@task_title = params[:title]
-	@task_body = params[:description]
 	@task_id = params[:task_id]
-	@list_id = params[:list_id]
-	Task.destroy(title: @task_title, description: @task_body, task_id: @task_id, list_id: @list_id)
+	Task.destroy(@task_id)
 	redirect '/lists'
 end
 

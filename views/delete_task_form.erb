@@ -4,15 +4,7 @@
 
 <form method="post" action="/task_removed"> 
 
-	<input type="hidden" name="_method" value="delete">
-
-	<input type="hidden" name="title" value="<%= @task_title %>">
-
-	<input type="hidden" name="description" value="<%= @task_body %>">
-
 	<input type="hidden" name="task_id" value="<%= @task_id %>">
-
-	<input type="hidden" name="list_id" value="<%= @list_id %>">
 
 	<input class="submit" type="submit" value="Delete Task">
 
