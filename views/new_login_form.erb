@@ -1,0 +1,11 @@
+<form action="<%= @actionUrl %>" method="post" enctype="multipart/form-data">
+  <label for="email">Email:</label>
+  <input type="text" name="email" class="text" value="<%= @user[:email] %>">
+  <label for="password">Password:</label>
+  <input type="password" name="password" class="text" value="<%= @user[:password] %>">
+  <% if @password_confirmation %>
+  <label for="password_confirmation">Password confirmation:</label>
+  <input type="password" name="password_confirmation" class="text">
+  <input type="submit" value="Send" class="button">
+  <% end %>
+</form>

@@ -3,20 +3,20 @@
     <table>
       <tbody>
         <tr>
-          <td>
+          <td =class="signup">
             <label for="email">Email:</label>
             <input type="text" name="email" class="text" value="<%= @user[:email] %>">
           </td> 
         </tr> 
         <tr>
-          <td>
+          <td =class="signup">
             <label for="password">Password:</label>
             <input type="password" name="password" class="text" value="<%= @user[:password] %>">
           </td> 
         </tr>
         <% if @password_confirmation %>
           <tr>
-            <td>
+            <td =class="signup">
               <label for="password_confirmation">Password confirmation:</label>
               <input type="password" name="password_confirmation" class="text">
               <input type="submit" value="Send" class="button">
