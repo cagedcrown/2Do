@@ -1,41 +1,171 @@
-# Requiring the basics for Sinatra to work
 require 'sinatra'
 require 'sinatra/reloader'
-# sinatra/activerecord allows us to run rake migrations
 require 'sinatra/activerecord'
-# sinatra/simple-authentication is the authentication gem
 require 'sinatra/simple-authentication'
-# rack-flash is how we can use flash messages
 require 'rack-flash'
+require 'pry'
 
-# We need our user model, plus the environments file to connect to the database
 require_relative './models/user'
 require_relative './models/list'
 require_relative './models/task'
 require_relative './config/environments'
 
-# Setting configuration options on our authentication gem
+#binding.pry
+
 Sinatra::SimpleAuthentication.configure do |c|
   c.use_password_confirmation = true
 end
-
-# Telling the app to use Rack::Flash
 use Rack::Flash, :sweep => true
-
-# Telling the app to use SimpleAuthentication
 register Sinatra::SimpleAuthentication
 
-# Our first route
 get '/' do
-  # Require a login to enter this route, otherwise go to the login page
   login_required
-  erb :index
+  redirect '/lists'
+  # erb :index
 end
 
 get '/lists' do
 	@lists = List.all
 	erb :lists
 end
+
+# able to view all lists and create a list on the same page
+get '/new_list' do
+	erb :new_list_form
+end
+
+post '/new_list_form' do
+	@list_title = params[:title]
+	@list_body = params[:body]
+	List.create(title: @list_title , body: @list_body)
+	redirect '/lists'
+end
+
+# able to view tasks within a form
+get '/new_task' do
+	erb :new_task_form
+end
+
+post '/new_task_form' do
+	# puts params.inspect
+	@current_user_id = current_user.id
+	@task_title = params[:title]
+	@task_body = params[:description]
+	@list_id = params[:list_id]
+	Task.create(title: @task_title, description: @task_body, list_id: @list_id, user_id: @current_user_id)
+end
+
+get '/:list_id/tasks' do
+    @list_id = params[:list_id]
+	@tasks = Task.where(list_id: params[:list_id])
+	erb :tasks
+end
+
+get '/something/:list_id/delete' do
+	@delete_list = List.find(params[:list_id])
+	@delete_list.destroy
+	redirect "/"
+end
+
+get '/:list_id/task_added' do
+	erb :task_added
+end
+
+get '/remove/task/:task_id' do
+	erb :delete_task_form
+end
+
+post '/task_removed' do
+	@task_title = params[:title]
+	@task_body = params[:description]
+	@task_id = params[:task_id]
+	@list_id = params[:list_id]
+	Task.destroy(title: @task_title, description: @task_body, task_id: @task_id, list_id: @list_id)
+	redirect '/lists'
+end
+
+post '/:list_id/tasks' do
+	erb :new_task_form
+end
+
+# delete 'remove/task/:id' do
+#   Task.get(params[:id]).destroy
+#   redirect to('/')
+# end
+
+
+# get '/current_user' do
+# 	@current_user_id = current_user.id
+# 	@current_user_email = current_user.email
+# 	erb :current_user
+# end
+
+
+# delete lists and tasks
+
+
+get '/whatever/:task_id' do
+	@delete_task = Task.find(params[:task_id])
+	@delete_task.destroy
+	erb :tasks
+end
+
+post '/:list_id/tasks/:task_id/delete' do
+end
+
+# edit lists and tasks
+get '/:list_id/edit' do
+end
+
+post '/:list_id/edit' do
+end
+
+get '/:list_id/tasks/:task_id/edit' do
+end
+
+post '/:list_id/tasks/:task_id/edit' do
+end
+
+#####
+
+# class Item < ActiveRecord::Base
+# 	has_many :deals, dependent: :destroy 
+# 	has_many :vendors, :through => :deals
+# 	validates :name, uniqueness: true
+# 	validates :name, presence: true
+
+# end
+
+#####
+
+# 
+# get '/users/:username/deals/:deal_id/delete' do
+# 	@deal = Deal.find(params[:deal_id])
+# 	@deal.destroy
+# 	redirect("/users/#{params[:username]}/deals")
+# end
+
+# get '/users/:username/purchases' do
+# 	@purchases = @current_user.purchases
+# 	erb :purchases
+# end
+
+# get '/users/:username/purchases/:purchase_id/delete' do
+# 	@purchase = Purchase.find(params[:purchase_id])
+# 	@purchase.destroy
+# 	redirect("/users/#{params[:username]}/purchases")
+# end
+
+
+# get '/:list_title/tasks' do
+# 	erb :
+# end
+
+# get '/new_thing/:thing' do
+# 	@whatever_we_want = params[:thing]
+# 	erb :someview
+# end
+
 # #setting up the index route
 # get '/' do
 #   # @users = User.all
