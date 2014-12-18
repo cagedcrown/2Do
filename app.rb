@@ -87,6 +87,47 @@ post '/:list_id/tasks' do
 	erb :new_task_form
 end
 
+get '/list/:list_id/edit' do
+	@list = List.find(params[:list_id])
+	@list_id = @list.id
+	erb :edit_list_form
+end
+
+post '/list/:list_id/edit' do
+	@update_list = List.find(params[:list_id])
+	@update_list.title = params[:title]
+	@update_list.body = params[:body]
+	@update_list.save
+	# List.save(title: @update_title, body: @update_body)
+	redirect '/lists'
+end
+
+get '/task/:task_id/edit' do
+	@task = Task.find(params[:task_id])
+	@task_id = @task.id
+	erb :edit_task_form
+end
+
+post '/task/:task_id/edit' do
+	@update_task = Task.find(params[:task_id])
+	@update_task.title = params[:title]
+	@update_task.description = params[:description]
+	@update_task.save
+	# List.save(title: @update_title, body: @update_body)
+	redirect '/lists'
+end
+
+
+# update_pet_name = params[:pet_name]
+# 		update_pet = Pet.find_by(pet_name: update_pet_name)
+# 		new_image = params[:new_image]
+# 		update_pet.image = new_image
+# 		update_pet.save
+# 		redirect('/pets')
+# 		else
+# 		redirect('/')
+
+
 # delete 'remove/task/:id' do
 #   Task.get(params[:id]).destroy
 #   redirect to('/')
@@ -103,18 +144,17 @@ end
 # delete lists and tasks
 
 
-get '/whatever/:task_id' do
-	@delete_task = Task.find(params[:task_id])
-	@delete_task.destroy
-	erb :tasks
-end
+# get '/whatever/:task_id' do
+# 	@delete_task = Task.find(params[:task_id])
+# 	@delete_task.destroy
+# 	erb :tasks
+# end
 
 post '/:list_id/tasks/:task_id/delete' do
 end
 
 # edit lists and tasks
-get '/:list_id/edit' do
-end
+
 
 post '/:list_id/edit' do
 end
