@@ -1,33 +1,30 @@
 <h5><a class="logout" href="/logout">Logout</a></h5>
+
 <h1><%= @list_title.title %></h1>
 
 <table>
 	<div class="tablehead">
-	<tr>
-		<th><h2>Task</h2></th>
-		<th><h2>Details</h2></th>
-		<th colspan="2"><h2>Options</h2></th>
-	</tr>
+		<tr>
+			<th><h2>Task</h2></th>
+			<th><h2>Details</h2></th>
+			<th colspan="2"><h2>Options</h2></th>
+		</tr>
 	</div>
 
-
 	<% @tasks.each do |task| %>	
+	
 	<tr>
 		<td><%= task.title %> </td>
 		<td><%= task.description %> </td>
 		<td><a href="/task/<%= task.id %>/edit"><img id="edittask" width="25px" src="/images/edit.svg" alt="Edit"></a></td>
 		<td><a href="/remove/task/<%= task.id %>"><img id="deletetask" width="25px" src="/images/delete.svg" alt="Delete"></a></td>
 	</tr>
+
 	<% end %>
+
 </table>
 
 <%= erb :new_task_form %>
 
 <h2><a href="/lists">Cancel</a>
 </h2>
-
-
-<!-- 
-/remove/task/:task_id -->
-
-<!-- /task/<%= @task_id %>/edit -->

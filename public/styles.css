@@ -8,12 +8,12 @@
 }
 
 input {
-    width: 450px;
-    height: 50px;
-    font-size:30px;
-    text-align: center;
-    color: #0bc8a2;
-    vertical-align: center;
+	width: 450px;
+	height: 50px;
+	font-size:30px;
+	text-align: center;
+	color: #0bc8a2;
+	vertical-align: center;
 }
 
 body {
@@ -23,11 +23,7 @@ body {
 	margin: auto;
 }
 
-.logo {
-	display: inline-block;
-}
-
-.logout {
+.logo, .logout {
 	display: inline-block;
 }
 
@@ -44,8 +40,7 @@ label {
 	font-size: 20px;
 }
 
-input,
-textarea{
+input, textarea{
 	margin: 18px auto;
 	display: block;
 }
@@ -104,11 +99,12 @@ td:nth-child(4) {
 	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
 	color: #fff;
 }
-/***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+
+/* Still need to read up on this stuff, not entirely sure how everything works */
 .submit:hover, .submit:focus {
 	color:#fff;
 	background: #0AB08F;
 	/*reduce the size of the shadow to give a pushed effect*/
-	-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
-	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;

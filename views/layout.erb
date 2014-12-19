@@ -4,27 +4,27 @@
   <title>2Do | To-Do List</title>
   <link type="text/css" rel="stylesheet" href="/styles.css">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
-    <nav>
+  <nav>
     <div class="logo">
       <img src="/images/2do_small.png" alt="2do Logo"></img>
     </div>
-      
+    
   </nav>
 </head>
 <body>
   
   <%#= We use flash[:notice] and flash[:error] to display one-time messages to the user. Something like "Successfully logged in!" or "Could not log in :(" would go in these %>
   <% if flash[:notice] %>
-    <%= flash[:notice] %>
+  <%= flash[:notice] %>
   <% end %>
 
   <% if flash[:error] %>
-    <%= flash[:error] %>
+  <%= flash[:error] %>
   <% end %>
 
   <%= yield %>
   <footer>
-  <p>Property of Maury T. Lindo | All Rights Reserved</p>
-</footer>
+    <p>Property of Maury T. Lindo | All Rights Reserved</p>
+  </footer>
 </body>
 </html>

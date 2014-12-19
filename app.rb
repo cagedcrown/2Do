@@ -21,11 +21,13 @@ get '/' do
   redirect '/lists'
 end
 
+### View All Lists
 get '/lists' do
 	@lists = List.all
 	erb :lists
 end
 
+### New List ###
 get '/new_list' do
 	erb :new_list_form
 end
@@ -37,6 +39,7 @@ post '/new_list_form' do
 	redirect '/lists'
 end
 
+### New Task ###
 get '/new_task' do
 	erb :new_task_form
 end
@@ -50,6 +53,7 @@ post '/new_task_form' do
 	redirect '/lists'
 end
 
+### View all tasks in each List ###
 get '/:list_id/tasks' do
 	@list_title = List.find(params[:list_id])
     @list_id = params[:list_id]
@@ -57,12 +61,14 @@ get '/:list_id/tasks' do
 	erb :tasks
 end
 
+### Delete List ###
 get '/something/:list_id/delete' do
 	@delete_list = List.find(params[:list_id])
 	@delete_list.destroy
 	redirect "/"
 end
 
+### Delete Task ###
 get '/remove/task/:task_id' do
 	@task_id = params[:task_id]
 	erb :delete_task_form
@@ -74,10 +80,7 @@ post '/task_removed' do
 	redirect '/lists'
 end
 
-post '/:list_id/tasks' do
-	erb :new_task_form
-end
-
+### Update List ###
 get '/list/:list_id/edit' do
 	@list = List.find(params[:list_id])
 	@list_id = @list.id
@@ -92,6 +95,7 @@ post '/list/:list_id/edit' do
 	redirect '/lists'
 end
 
+### Update Task ###
 get '/task/:task_id/edit' do
 	@task = Task.find(params[:task_id])
 	@task_id = @task.id
