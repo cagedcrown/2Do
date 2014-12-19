@@ -1,22 +1,25 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="./public/styles.css">
 </head>
+<h5><a class="logout" href="/logout">Logout</a></h5>
 <h1>All Lists</h1>
-<h2><%= erb :new_list_form %></h2>
+<%= erb :new_list_form %>
 
 <table>
+	<div class="tablehead">
 	<tr>
 		<th>Name</th>
 		<th>Description</th>
 		<th colspan="2">Options</th>
 	</tr>
+	</div>
 
 	<% @lists.each do |list| %>
-	<tr class="icon">
+	<tr>
 		<td><a href="/<%= list.id %>/tasks"><%= list.title %> </td>
 		<td><p><%= list.body %></p></td>
-		<td><a href="/list/<%= list.id %>/edit"><img width="25px" src="/images/edit.svg" alt="Edit"></a></td>
-		<td><a href="/something/<%= list.id %>/delete"><img width="25px" src="/images/delete.svg" alt="Delete"></a></td>
+		<td><a href="/list/<%= list.id %>/edit"><img class="edit" width="25px" src="/images/edit.svg" alt="Edit"></a></td>
+		<td><a href="/something/<%= list.id %>/delete"><img class="delete" width="25px" src="/images/delete.svg" alt="Delete"></a></td>
 	</tr>
 	<% end %>
 </table>

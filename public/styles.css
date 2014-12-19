@@ -1,9 +1,19 @@
 .signup, .nav {
 	color: #0bc8a2;
+	text-decoration: underline;
 }
 
 .nav {
 	display: inline-block;
+}
+
+input {
+    width: 450px;
+    height: 50px;
+    font-size:30px;
+    text-align: center;
+    color: #0bc8a2;
+    vertical-align: center;
 }
 
 body {
@@ -17,7 +27,7 @@ body {
 	display: inline-block;
 }
 
-nav {
+.logout {
 	display: inline-block;
 }
 
@@ -50,13 +60,7 @@ ul {
 }
 
 footer {
-	margin-top: 20em;
-}
-
-
-.icon {
-	width: 40px;
-	height: auto;
+	margin-top: 15em;
 }
 
 table img {
@@ -64,44 +68,46 @@ table img {
 }
 
 table {
-	border-spacing: 0.5rem;
+	border-spacing: 0.5em;
 }
 
 td {
-	padding: 0.5rem;
+	padding: 0.5em;
 }
 
-td:nth-child(1) { background: hsl(150, 50%, 50%); }
-td:nth-child(2) { background: hsl(160, 60%, 50%); }
-td:nth-child(3) { background: hsl(170, 70%, 50%); }
-td:nth-child(4) { background: hsl(180, 80%, 50%); }
-td:nth-child(5) { background: hsl(190, 90%, 50%); }
-td:nth-child(6) { background: hsl(200, 99%, 50%); }
+td:nth-child(1) {
+	background: hsl(150, 50%, 50%); 
+}
+
+td:nth-child(2) {
+	background: hsl(160, 60%, 50%); 
+}
+
+td:nth-child(3) {
+	background: hsl(170, 70%, 50%); 
+}
+
+td:nth-child(4) {
+	background: hsl(180, 80%, 50%); 
+}
 
 .submit {
-	width:500px;
-	background: #0bc8a2; /*the colour of the button*/
-	padding: 8px 14px 10px; /*apply some padding inside the button*/
-	border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
-	cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
-	/*style the text*/
-	font-size:1.5em;
-	font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+	font-family:'Source Sans Pro', sans-serif;
+	width:455px;
+	height: 60px;
+	background: #0bc8a2;
+	padding: 8px 14px 10px;
+	border:1px solid #3e9cbf;
+	cursor:pointer;
+	font-size:2em;
 	letter-spacing:.1em;
-	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
 	color: #fff;
-	/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
-	-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
-	/*give the corners a small curve*/
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
 }
 /***SET THE BUTTON'S HOVER AND FOCUS STATES***/
 .submit:hover, .submit:focus {
-	color:#dfe7ea;
+	color:#fff;
+	background: #0AB08F;
 	/*reduce the size of the shadow to give a pushed effect*/
 	-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
