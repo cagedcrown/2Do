@@ -27,7 +27,7 @@ Complete list of user stories [here](https://www.pivotaltracker.com/n/projects/1
 
 ![](https://cloud.githubusercontent.com/assets/6254227/5504941/15bb5e5a-8759-11e4-9ee5-88657ec3063d.png)
 
-**What's I would like to do next**
+**What I would like to do next**
 - Sort lists in aphabetical order
 - Add username
 - Add user profile pages
